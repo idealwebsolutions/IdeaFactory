@@ -1,0 +1,26 @@
+// Variables
+@import "variables";
+
+// Bulma
+@import '~bulma/bulma';
+@import '~buefy/src/scss/buefy';
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  position: absolute;
+  left: 50%;
+  margin-left: -63px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-center-item {
+  max-width: 50%;
+}
