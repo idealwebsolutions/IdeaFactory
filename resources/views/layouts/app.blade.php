@@ -16,14 +16,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-
+    <link href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar">
+        <nav class="navbar is-mobile">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
                     <h5 class="title is-5">{{ config('app.name', 'Laravel') }}</h5>
@@ -53,10 +53,11 @@
                     </li>
                     <li class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="#" role="button" v-pre>
-                            <div class="media">
+                            {{ Auth::user()->display_name }}
+                            {{-- <div class="media">
                                 <figure class="media-left">
                                     <p class="image is-32x32">
-                                        <img alt="" src="{{ Auth::user()->avatar }}" />
+                                        <img alt="avatar" src="{{ Auth::user()->avatar }}" />
                                     </p>
                                 </figure>
                                 <div class="media-content">
@@ -64,19 +65,17 @@
                                         <strong>{{ Auth::user()->display_name }}</strong>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </a>
-                                {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div> --}}
+                        
+                        <div class="navbar-dropdown">
+                          <a class="navbar-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                          </a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                          </form>
+                        </div>
                       </li>
                       @endguest
                   </ul>

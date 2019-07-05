@@ -606,7 +606,7 @@ var render = function() {
               attrs: { href: "#" },
               on: {
                 click: function($event) {
-                  _vm.handleFilterChange("following")
+                  return _vm.handleFilterChange("following")
                 }
               }
             },
@@ -629,13 +629,14 @@ var render = function() {
                     attrs: { href: "#" },
                     on: {
                       click: function($event) {
-                        _vm.handleFilterChange(category)
+                        return _vm.handleFilterChange(category)
                       }
                     }
                   },
                   [_vm._v("\n            " + _vm._s(category) + "\n          ")]
                 )
-              })
+              }),
+              0
             )
           ])
         ]),
@@ -739,12 +740,12 @@ if(false) {
 /***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(41)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.wall[data-v-60dcc8a9] {\n  -webkit-column-count: 4;\n          column-count: 4;\n  -webkit-column-gap: 1em;\n          column-gap: 1em;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: 'row wrap';\n          flex-flow: 'row wrap';\n}\n", ""]);
+exports.push([module.i, "\n.wall[data-v-60dcc8a9] {\n  -webkit-column-count: 4;\n     -moz-column-count: 4;\n          column-count: 4;\n  -webkit-column-gap: 1em;\n     -moz-column-gap: 1em;\n          column-gap: 1em;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: 'row wrap';\n          flex-flow: 'row wrap';\n}\n", ""]);
 
 // exports
 
@@ -1136,7 +1137,7 @@ if(false) {
 /***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(41)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -1265,7 +1266,8 @@ var render = function() {
             likes: pin.likes
           }
         })
-      })
+      }),
+      1
     ),
     _vm._v(" "),
     _c("div", {

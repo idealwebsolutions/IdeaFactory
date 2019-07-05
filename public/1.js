@@ -455,7 +455,7 @@ if(false) {
 /***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(41)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -507,6 +507,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     handleError: function handleError(err) {
+      console.error('test');
       console.error(err);
     }
   }

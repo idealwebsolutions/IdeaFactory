@@ -33,6 +33,7 @@
     },
     methods: {
       handleError: function (err) {
+        console.error('test')
         console.error(err)
       }
     }

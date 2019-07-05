@@ -16,6 +16,7 @@ Route::get('/discover', 'MainController@discover')->name('discover');
 Route::get('/{profile}', 'ProfileController@index')->name('profile');
 
 // OAuth routes
-Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');
+Route::get('/auth/twitter', 'Auth\LoginController@redirectToProvider')->name('login');
 Route::get('/auth/twitter/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
