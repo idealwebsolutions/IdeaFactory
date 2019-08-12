@@ -24,7 +24,7 @@
 <body>
     <div id="app">
         <b-navbar variant="faded" type="light">
-            <b-navbar-brand tag="h5" class="mb-0" href="{{ url('/') }}">
+            <b-navbar-brand tag="h6" class="mb-0" href="{{ url('/') }}">
               {{ config('app.name', 'Laravel') }}
             </b-navbar-brand>
             <b-navbar-toggle target="collapsable-nav"></b-navbar-toggle>
@@ -40,7 +40,13 @@
                     @else
                     <b-nav-item href="{{ route('home') }}">Home</b-nav-item>
                     <b-nav-item href="{{ route('discover') }}">Explore</b-nav-item>
-                    <b-nav-item-dropdown text="{{ Auth::user()->display_name }}" right>
+                    <b-nav-item-dropdown right>
+                      <template slot="button-content">
+                        <b-img src="{{ Auth::user()->avatar }}" width=25 height=25 alt="avatar"></b-img>
+                      </template>
+                      <b-dropdown-text>Signed in as <strong class="font-weight-bold">{{ Auth::user()->display_name }}</strong></b-dropdown-text>
+                      <b-dropdown-divider></b-dropdown-divider>
+                      <b-dropdown-item href="{{ route('profile', ['profile' => 'idealwebsolutions']) }}">Profile</b-dropdown-item>
                       <b-dropdown-item href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                       </b-dropdown-item>

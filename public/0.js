@@ -722,7 +722,7 @@ exports = module.exports = __webpack_require__(83)(false);
 
 
 // module
-exports.push([module.i, "\n.wall[data-v-60dcc8a9] {\n  -webkit-column-count: 4;\n     -moz-column-count: 4;\n          column-count: 4;\n  -webkit-column-gap: 1em;\n     -moz-column-gap: 1em;\n          column-gap: 1em;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: 'row wrap';\n          flex-flow: 'row wrap';\n}\n", ""]);
+exports.push([module.i, "\n.card-columns[data-v-60dcc8a9] {\n  -webkit-column-count: 4;\n     -moz-column-count: 4;\n          column-count: 4;\n}\n", ""]);
 
 // exports
 
@@ -738,8 +738,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Pin_vue__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Pin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Pin_vue__);
-//
-//
 //
 //
 //
@@ -1146,6 +1144,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -1179,18 +1178,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "b-card",
-    {
-      staticClass: "card text-center",
-      attrs: {
-        "no-body": "",
-        "img-alt": _vm.title,
-        "img-src": _vm.content,
-        fallback: "http://via.placeholder.com/200x150",
-        tag: "article",
-        "img-top": ""
-      }
-    },
+    { staticClass: "text-center", attrs: { "no-body": "", tag: "article" } },
     [
+      _c("b-card-img-lazy", {
+        attrs: {
+          alt: _vm.title,
+          src: _vm.content,
+          fallback: "http://via.placeholder.com/200x150",
+          top: ""
+        }
+      }),
+      _vm._v(" "),
       _c(
         "b-card-body",
         [
@@ -1231,7 +1229,7 @@ var render = function() {
     [
       _c(
         "b-card-group",
-        { staticClass: "wall", attrs: { columns: "" } },
+        { attrs: { columns: "" } },
         _vm._l(_vm.pins, function(pin) {
           return _c("Pin", {
             key: pin.id,

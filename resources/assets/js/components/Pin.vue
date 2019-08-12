@@ -1,5 +1,6 @@
 <template>
-  <b-card no-body class="card text-center" :img-alt="title" :img-src="content" fallback="http://via.placeholder.com/200x150" tag="article" img-top>
+  <b-card no-body class="text-center" tag="article">
+    <b-card-img-lazy :alt="title" :src="content" fallback="http://via.placeholder.com/200x150" top></b-card-img-lazy>
     <b-card-body>
       <b-card-title>{{ title }}</b-card-title>
       <b-card-sub-title class="mb-2">by {{ author }}</b-card-sub-title>

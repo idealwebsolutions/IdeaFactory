@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <b-card-group columns class="wall">
+    <b-card-group columns>
       <Pin 
         v-for="pin in pins"
         :key="pin.id"
@@ -15,10 +15,8 @@
 </template>
 
 <style scoped>
-  .wall {
+  .card-columns {
     column-count: 4;
-    column-gap: 1em;
-    flex-flow: 'row wrap';
   }
 </style>
 

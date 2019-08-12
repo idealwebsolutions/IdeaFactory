@@ -19,11 +19,15 @@ import {
   BNavItem, 
   BNavItemDropdown,
   BDropdownItem,
+  BDropdownText,
+  BDropdownDivider,
   BCard,
   BCardBody,
   BCardTitle,
   BCardSubTitle,
-  BCardGroup
+  BCardGroup,
+  BCardImgLazy,
+  BImg
 } from 'bootstrap-vue';
 import ready from 'document-ready';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -46,11 +50,15 @@ Vue.component('b-nav', BNav);
 Vue.component('b-nav-item', BNavItem);
 Vue.component('b-nav-item-dropdown', BNavItemDropdown);
 Vue.component('b-dropdown-item', BDropdownItem);
+Vue.component('b-dropdown-text', BDropdownText);
+Vue.component('b-dropdown-divider', BDropdownDivider);
 Vue.component('b-card', BCard);
 Vue.component('b-card-body', BCardBody);
 Vue.component('b-card-title', BCardTitle);
 Vue.component('b-card-sub-title', BCardSubTitle);
 Vue.component('b-card-group', BCardGroup);
+Vue.component('b-card-img-lazy', BCardImgLazy);
+Vue.component('b-img', BImg);
 
 ready(() => new Vue({
   el: '#app',
