@@ -7,9 +7,27 @@
 import './bootstrap';
 
 import Vue from 'vue';
-import Loading from 'buefy/dist/components/loading';
+// import BootstrapVue from 'bootstrap-vue';
+import { 
+  BSpinner, 
+  BCollapse,
+  BNavbar,
+  BNavbarNav,
+  BNavbarBrand,
+  BNavbarToggle,
+  BNav, 
+  BNavItem, 
+  BNavItemDropdown,
+  BDropdownItem,
+  BCard,
+  BCardBody,
+  BCardTitle,
+  BCardSubTitle,
+  BCardGroup
+} from 'bootstrap-vue';
 import ready from 'document-ready';
-import 'buefy/dist/buefy.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -18,7 +36,21 @@ import 'buefy/dist/buefy.css';
  */
 // Vue.component(Buefy.Loading.name, Buefy.Loading);
 // Vue.component(Buefy.Toast.name, Buefy.Toast);
-Vue.use(Loading);
+Vue.component('b-spinner', BSpinner);
+Vue.component('b-collapse', BCollapse);
+Vue.component('b-navbar', BNavbar);
+Vue.component('b-navbar-brand', BNavbarBrand);
+Vue.component('b-navbar-toggle', BNavbarToggle);
+Vue.component('b-navbar-nav', BNavbarNav);
+Vue.component('b-nav', BNav);
+Vue.component('b-nav-item', BNavItem);
+Vue.component('b-nav-item-dropdown', BNavItemDropdown);
+Vue.component('b-dropdown-item', BDropdownItem);
+Vue.component('b-card', BCard);
+Vue.component('b-card-body', BCardBody);
+Vue.component('b-card-title', BCardTitle);
+Vue.component('b-card-sub-title', BCardSubTitle);
+Vue.component('b-card-group', BCardGroup);
 
 ready(() => new Vue({
   el: '#app',

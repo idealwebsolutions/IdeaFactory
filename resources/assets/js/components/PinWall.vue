@@ -1,8 +1,10 @@
 <template>
   <div class="container is-fluid">
-    <b-loading :is-full-page="false" :active.sync="loading" :can-cancel="false"></b-loading>
     <filter-bar v-on:filter="setActiveFilter" :filter="filter"></filter-bar>
     <visible-pins v-on:pins="fetchPins" :disabled="disabled" :pins="pins"></visible-pins>
+    <div class="d-flex justify-content-center mb-3">
+      <b-spinner type="grow" label="Loading" v-if="loading"></b-spinner>
+    </div>
   </div>
 </template>
 

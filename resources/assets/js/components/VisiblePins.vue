@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="wall">
+    <b-card-group columns class="wall">
       <Pin 
         v-for="pin in pins"
         :key="pin.id"
@@ -9,7 +9,7 @@
         :author="pin.author"
         :likes="pin.likes"
       ></Pin>
-    </div>
+    </b-card-group>
     <div v-infinite-scroll="getMorePins" infinite-scroll-disabled="disabled" infinite-scroll-distance="10"></div>
   </div>
 </template>

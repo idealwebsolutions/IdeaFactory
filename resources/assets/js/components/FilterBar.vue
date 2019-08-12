@@ -1,21 +1,12 @@
 <template>
-  <nav class="navbar is-transparent is-mobile is-centered">
-    <div class="navbar-menu navbar-center">
-      <div class="navbar-start"></div>
-      <div class="navbar-center">
-        <a class="navbar-item" href="#" @click="handleFilterChange('following')">Following</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Categories</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#" @click="handleFilterChange(category)" v-for="category in categories">
-              {{ category }}
-            </a>
-          </div>     
-        </div>
-      </div>
-      <div class="navbar-end"></div>
-    </div>
-  </nav>
+  <b-nav align="center">
+    <b-nav-item @click="handleFilterChange('following')">Following</b-nav-item>
+    <b-nav-item-dropdown text="Categories" toggle-class="nav-link" left>
+      <b-dropdown-item @click="handleFilterChange(category)" :key="index" v-for="(category, index) in categories">
+        {{ category }}
+      </b-dropdown-item>
+    </b-nav-item-dropdown>
+  </b-nav>
 </template>
 
 <script>

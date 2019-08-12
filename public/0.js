@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 42:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(44)
+var normalizeComponent = __webpack_require__(276)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(279)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(294)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 44:
+/***/ 276:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,7 +158,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 45:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -177,7 +177,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(46)
+var listToStyles = __webpack_require__(278)
 
 /*
 type StyleObject = {
@@ -387,7 +387,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 46:
+/***/ 278:
 /***/ (function(module, exports) {
 
 /**
@@ -421,15 +421,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 47:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FilterBar_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FilterBar_vue__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FilterBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FilterBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__VisiblePins_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__VisiblePins_vue__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__VisiblePins_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__VisiblePins_vue__);
+//
+//
 //
 //
 //
@@ -494,15 +496,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 48:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(44)
+var normalizeComponent = __webpack_require__(276)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(281)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(282)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -542,20 +544,11 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 49:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -584,7 +577,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 50:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -592,58 +585,42 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "nav",
-    { staticClass: "navbar is-transparent is-mobile is-centered" },
+    "b-nav",
+    { attrs: { align: "center" } },
     [
-      _c("div", { staticClass: "navbar-menu navbar-center" }, [
-        _c("div", { staticClass: "navbar-start" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "navbar-center" }, [
-          _c(
-            "a",
+      _c(
+        "b-nav-item",
+        {
+          on: {
+            click: function($event) {
+              return _vm.handleFilterChange("following")
+            }
+          }
+        },
+        [_vm._v("Following")]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-nav-item-dropdown",
+        { attrs: { text: "Categories", "toggle-class": "nav-link", left: "" } },
+        _vm._l(_vm.categories, function(category, index) {
+          return _c(
+            "b-dropdown-item",
             {
-              staticClass: "navbar-item",
-              attrs: { href: "#" },
+              key: index,
               on: {
                 click: function($event) {
-                  return _vm.handleFilterChange("following")
+                  return _vm.handleFilterChange(category)
                 }
               }
             },
-            [_vm._v("Following")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "navbar-item has-dropdown is-hoverable" }, [
-            _c("a", { staticClass: "navbar-link", attrs: { href: "#" } }, [
-              _vm._v("Categories")
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "navbar-dropdown" },
-              _vm._l(_vm.categories, function(category) {
-                return _c(
-                  "a",
-                  {
-                    staticClass: "navbar-item",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        return _vm.handleFilterChange(category)
-                      }
-                    }
-                  },
-                  [_vm._v("\n            " + _vm._s(category) + "\n          ")]
-                )
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "navbar-end" })
-      ])
-    ]
+            [_vm._v("\n      " + _vm._s(category) + "\n    ")]
+          )
+        }),
+        1
+      )
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -658,19 +635,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 51:
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(52)
+  __webpack_require__(284)
 }
-var normalizeComponent = __webpack_require__(44)
+var normalizeComponent = __webpack_require__(276)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(286)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(293)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -710,17 +687,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 52:
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(53);
+var content = __webpack_require__(285);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(45)("2d943030", content, false, {});
+var update = __webpack_require__(277)("2d943030", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -737,10 +714,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 53:
+/***/ 285:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(83)(false);
 // imports
 
 
@@ -752,14 +729,14 @@ exports.push([module.i, "\n.wall[data-v-60dcc8a9] {\n  -webkit-column-count: 4;\
 
 /***/ }),
 
-/***/ 54:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_infinite_scroll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Pin_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Pin_vue__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Pin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Pin_vue__);
 //
 //
@@ -814,7 +791,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 55:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -1055,19 +1032,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 56:
+/***/ 288:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(57)
+  __webpack_require__(289)
 }
-var normalizeComponent = __webpack_require__(44)
+var normalizeComponent = __webpack_require__(276)
 /* script */
-var __vue_script__ = __webpack_require__(59)
+var __vue_script__ = __webpack_require__(291)
 /* template */
-var __vue_template__ = __webpack_require__(60)
+var __vue_template__ = __webpack_require__(292)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1107,17 +1084,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 57:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(58);
+var content = __webpack_require__(290);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(45)("36c1d640", content, false, {});
+var update = __webpack_require__(277)("36c1d640", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1134,10 +1111,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 58:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(83)(false);
 // imports
 
 
@@ -1149,18 +1126,11 @@ exports.push([module.i, "\n.card[data-v-666438a4] {\n  margin: 0 0 1em;\n}\n", "
 
 /***/ }),
 
-/***/ 59:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1200,38 +1170,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 60:
+/***/ 292:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("article", { staticClass: "card is-inline-block" }, [
-    _c("div", { staticClass: "card-image" }, [
-      _c("figure", { staticClass: "image" }, [
-        _c("img", {
-          attrs: {
-            alt: _vm.title,
-            src: _vm.content,
-            fallback: "http://via.placeholder.com/200x150"
-          }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-content" }, [
-      _c("div", { staticClass: "content has-text-centered" }, [
-        _c("p", { staticClass: "title is-spaced is-6" }, [
-          _vm._v(_vm._s(_vm.title))
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "subtitle is-7" }, [
-          _vm._v("by " + _vm._s(_vm.author))
-        ])
-      ])
-    ])
-  ])
+  return _c(
+    "b-card",
+    {
+      staticClass: "card text-center",
+      attrs: {
+        "no-body": "",
+        "img-alt": _vm.title,
+        "img-src": _vm.content,
+        fallback: "http://via.placeholder.com/200x150",
+        tag: "article",
+        "img-top": ""
+      }
+    },
+    [
+      _c(
+        "b-card-body",
+        [
+          _c("b-card-title", [_vm._v(_vm._s(_vm.title))]),
+          _vm._v(" "),
+          _c("b-card-sub-title", { staticClass: "mb-2" }, [
+            _vm._v("by " + _vm._s(_vm.author))
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1245,46 +1218,51 @@ if (false) {
 
 /***/ }),
 
-/***/ 61:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "wall" },
-      _vm._l(_vm.pins, function(pin) {
-        return _c("Pin", {
-          key: pin.id,
-          attrs: {
-            title: pin.title,
-            content: pin.content,
-            author: pin.author,
-            likes: pin.likes
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c(
+        "b-card-group",
+        { staticClass: "wall", attrs: { columns: "" } },
+        _vm._l(_vm.pins, function(pin) {
+          return _c("Pin", {
+            key: pin.id,
+            attrs: {
+              title: pin.title,
+              content: pin.content,
+              author: pin.author,
+              likes: pin.likes
+            }
+          })
+        }),
+        1
+      ),
+      _vm._v(" "),
+      _c("div", {
+        directives: [
+          {
+            name: "infinite-scroll",
+            rawName: "v-infinite-scroll",
+            value: _vm.getMorePins,
+            expression: "getMorePins"
           }
-        })
-      }),
-      1
-    ),
-    _vm._v(" "),
-    _c("div", {
-      directives: [
-        {
-          name: "infinite-scroll",
-          rawName: "v-infinite-scroll",
-          value: _vm.getMorePins,
-          expression: "getMorePins"
+        ],
+        attrs: {
+          "infinite-scroll-disabled": "disabled",
+          "infinite-scroll-distance": "10"
         }
-      ],
-      attrs: {
-        "infinite-scroll-disabled": "disabled",
-        "infinite-scroll-distance": "10"
-      }
-    })
-  ])
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1298,7 +1276,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 62:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1309,19 +1287,6 @@ var render = function() {
     "div",
     { staticClass: "container is-fluid" },
     [
-      _c("b-loading", {
-        attrs: {
-          "is-full-page": false,
-          active: _vm.loading,
-          "can-cancel": false
-        },
-        on: {
-          "update:active": function($event) {
-            _vm.loading = $event
-          }
-        }
-      }),
-      _vm._v(" "),
       _c("filter-bar", {
         attrs: { filter: _vm.filter },
         on: { filter: _vm.setActiveFilter }
@@ -1330,7 +1295,18 @@ var render = function() {
       _c("visible-pins", {
         attrs: { disabled: _vm.disabled, pins: _vm.pins },
         on: { pins: _vm.fetchPins }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d-flex justify-content-center mb-3" },
+        [
+          _vm.loading
+            ? _c("b-spinner", { attrs: { type: "grow", label: "Loading" } })
+            : _vm._e()
+        ],
+        1
+      )
     ],
     1
   )

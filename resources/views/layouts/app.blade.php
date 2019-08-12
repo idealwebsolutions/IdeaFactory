@@ -23,64 +23,35 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar is-mobile">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="{{ url('/') }}">
-                    <h5 class="title is-5">{{ config('app.name', 'Laravel') }}</h5>
-                </a>
-                <div class="navbar-burger burger" data-target="collapsable-nav">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>    
-            </div>
-
-            <div class="navbar-menu" id="navbarSupportedContent">
+        <b-navbar variant="faded" type="light">
+            <b-navbar-brand tag="h5" class="mb-0" href="{{ url('/') }}">
+              {{ config('app.name', 'Laravel') }}
+            </b-navbar-brand>
+            <b-navbar-toggle target="collapsable-nav"></b-navbar-toggle>
+            
+            <b-collapse id="nav-collapse" is-nav>
                 <!-- Left Side Of Navbar -->
-                <div class="navbar-start"></div>
+                <b-navbar-nav></b-navbar-nav>
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-end">
+                <b-navbar-nav class="ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                    <li class="navbar-item">
-                        <a class="button" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
                     @else
-                    <li class="navbar-item">
-                        <a href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="{{ route('discover') }}">Explore</a>
-                    </li>
-                    <li class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="#" role="button" v-pre>
-                            {{ Auth::user()->display_name }}
-                            {{-- <div class="media">
-                                <figure class="media-left">
-                                    <p class="image is-32x32">
-                                        <img alt="avatar" src="{{ Auth::user()->avatar }}" />
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <strong>{{ Auth::user()->display_name }}</strong>
-                                    </div>
-                                </div>
-                            </div> --}}
-                        </a>
-                        
-                        <div class="navbar-dropdown">
-                          <a class="navbar-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                          </a>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                          </form>
-                        </div>
-                      </li>
-                      @endguest
-                  </ul>
-            </div>
-        </nav>
+                    <b-nav-item href="{{ route('home') }}">Home</b-nav-item>
+                    <b-nav-item href="{{ route('discover') }}">Explore</b-nav-item>
+                    <b-nav-item-dropdown text="{{ Auth::user()->display_name }}" right>
+                      <b-dropdown-item href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                      </b-dropdown-item>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                      </form>
+                    </b-nav-item>
+                    @endguest
+                  </b-navbar-nav>
+            </b-collapse>
+        </b-navbar>
 
         <main class="py-4">
             @yield('content')
