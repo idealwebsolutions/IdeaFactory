@@ -46,7 +46,7 @@
                       </template>
                       <b-dropdown-text>Signed in as <strong class="font-weight-bold">{{ Auth::user()->display_name }}</strong></b-dropdown-text>
                       <b-dropdown-divider></b-dropdown-divider>
-                      <b-dropdown-item href="{{ route('profile', ['profile' => 'idealwebsolutions']) }}">Profile</b-dropdown-item>
+                      <b-dropdown-item href="{{ route('profile', ['profile' => Auth::user()->display_name]) }}">Profile</b-dropdown-item>
                       <b-dropdown-item href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                       </b-dropdown-item>
